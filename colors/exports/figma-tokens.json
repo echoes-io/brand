@@ -59,173 +59,173 @@
     },
     "anima": {
       "50": {
-        "value": "#f0fdf4",
+        "value": "#f0fdf6",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "100": {
-        "value": "#dcfce7",
+        "value": "#ddfbe8",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "200": {
-        "value": "#bbf7d0",
+        "value": "#bef5d3",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "300": {
-        "value": "#86efac",
+        "value": "#8eecb4",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "400": {
-        "value": "#4ade80",
+        "value": "#56db8e",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "500": {
-        "value": "#22c55e",
+        "value": "#2fc470",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "600": {
-        "value": "#16a34a",
+        "value": "#20a558",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "700": {
-        "value": "#15803d",
+        "value": "#1c8449",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "800": {
-        "value": "#166534",
+        "value": "#1a693d",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "900": {
-        "value": "#14532d",
+        "value": "#175634",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       },
       "950": {
-        "value": "#052e16",
+        "value": "#0a301b",
         "type": "color",
-        "description": "Growth, support, tenderness"
+        "description": "Sage green with teal undertones - growth, support, tenderness"
       }
     },
     "eros": {
       "50": {
-        "value": "#fef2f2",
+        "value": "#fef2f3",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "100": {
-        "value": "#fee2e2",
+        "value": "#fde3e6",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "200": {
-        "value": "#fecaca",
+        "value": "#fbccd2",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "300": {
-        "value": "#fca5a5",
+        "value": "#f7a8b3",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "400": {
-        "value": "#f87171",
+        "value": "#f17689",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "500": {
-        "value": "#ef4444",
+        "value": "#e74c64",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "600": {
-        "value": "#dc2626",
+        "value": "#d32f4f",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "700": {
-        "value": "#b91c1c",
+        "value": "#b22240",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "800": {
-        "value": "#991b1b",
+        "value": "#951e3b",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "900": {
-        "value": "#7f1d1d",
+        "value": "#7f1d37",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       },
       "950": {
-        "value": "#450a0a",
+        "value": "#460c1a",
         "type": "color",
-        "description": "Passion, intensity, rawness"
+        "description": "Deep burgundy with crimson warmth - passion, intensity, rawness"
       }
     },
     "bloom": {
       "50": {
-        "value": "#fff7ed",
+        "value": "#fef8f3",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "100": {
-        "value": "#ffedd5",
+        "value": "#fdeee6",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "200": {
-        "value": "#fed7aa",
+        "value": "#fadacc",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "300": {
-        "value": "#fdba74",
+        "value": "#f6bfa8",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "400": {
-        "value": "#fb923c",
+        "value": "#f09b74",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "500": {
-        "value": "#f97316",
+        "value": "#e87a47",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "600": {
-        "value": "#ea580c",
+        "value": "#d96129",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "700": {
-        "value": "#c2410c",
+        "value": "#b64d1f",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "800": {
-        "value": "#9a3412",
+        "value": "#92401e",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "900": {
-        "value": "#7c2d12",
+        "value": "#75361d",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       },
       "950": {
-        "value": "#431407",
+        "value": "#3f1a0d",
         "type": "color",
-        "description": "Blossoming, balance, discovery"
+        "description": "Warm terracotta peach - blossoming, balance, discovery"
       }
     }
   }
