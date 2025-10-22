@@ -114,10 +114,9 @@ Automated testing and deployment run on every push via GitHub Actions.
 2. Run `npm run colors` to build and verify
 3. Commit and push to `main`
 4. GitHub Actions will:
-   - Lint code
-   - Check accessibility
-   - Build exports
-   - Commit updated exports
+   - Run quality checks (lint, accessibility, build)
+   - Release to NPM (semantic versioning)
+   - Build and commit updated exports
    - Deploy preview to GitHub Pages
 
 ## Typography
@@ -139,6 +138,25 @@ Variants:
 
 ## Usage
 
+### NPM Package
+
+```bash
+npm install @echoes-io/brand
+```
+
+```typescript
+import { colors, metadata } from '@echoes-io/brand/colors';
+
+// Use colors in your app
+const animaColor = colors.anima[500]; // #2fc470
+```
+
+### Direct from GitHub
+
+```
+https://raw.githubusercontent.com/echoes-io/brand/main/colors/exports/palette.json
+```
+
 Brand assets are designed to be used across:
 - Web application
 - CLI tools
@@ -153,6 +171,7 @@ Brand assets are designed to be used across:
 - [x] Export formats (CSS vars, Tailwind config, Figma tokens, HTML preview)
 - [x] Accessibility testing (WCAG AA compliance)
 - [x] Automated CI/CD (lint, check, build, deploy)
+- [x] NPM package publishing (semantic versioning)
 - [ ] Typography selection
 - [ ] Logo design
 - [ ] Usage guidelines
