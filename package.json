@@ -9,9 +9,9 @@
     "lint:lockfile": "lockfile-lint --path package-lock.json",
     "lint:engines": "ls-engines",
     "lint:publish": "publint --strict",
-    "build": "tsx scripts/build.ts",
-    "check": "tsx scripts/check-contrast.ts",
-    "dev": "npm run build && npm run check",
+    "colors:export": "tsx scripts/colors-export.ts",
+    "colors:check": "tsx scripts/colors-check.ts",
+    "colors": "npm run colors:export && npm run colors:check",
     "prepare": "husky"
   },
   "engines": {

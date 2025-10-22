@@ -93,7 +93,7 @@ https://raw.githubusercontent.com/echoes-io/brand/main/colors/exports/palette.js
 
 All combinations meet WCAG AA standards (4.5:1 minimum contrast for normal text).
 
-**Test locally:** `npm run check`
+**Test locally:** `npm run colors:check`
 
 **Preview:** https://echoes-io.github.io/brand/
 
@@ -103,15 +103,15 @@ Automated testing and deployment run on every push via GitHub Actions.
 
 ### Scripts
 
-- `npm run build` - Generate all color exports
-- `npm run check` - Verify WCAG AA contrast ratios
+- `npm run colors:export` - Generate all color exports
+- `npm run colors:check` - Verify WCAG AA contrast ratios
 - `npm run lint` - Run all linters
-- `npm run dev` - Build and check
+- `npm run colors` - Build and check
 
 ### Workflow
 
 1. Edit `colors/index.ts`
-2. Run `npm run dev` to build and verify
+2. Run `npm run colors` to build and verify
 3. Commit and push to `main`
 4. GitHub Actions will:
    - Lint code

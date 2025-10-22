@@ -31,10 +31,10 @@ jobs:
         run: npm run lint
       
       - name: Check color contrast (WCAG AA)
-        run: npm run check
+        run: npm run colors:check
       
       - name: Build color exports
-        run: npm run build
+        run: npm run colors:export
       
       - name: Commit updated exports
         run: |
