@@ -8,5 +8,5 @@
 "colors/index.ts":
   - "bash -c 'npm run dev'"
 
-"*.{ts,tsx,json,yaml,graphql,md,css,scss,html}":
+"*.{ts,tsx,cjs,json,yaml,graphql,md,css,scss,html}":
   - "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"

@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Echoes Color Palettes</title>
+  <title>Echoes Brand System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 3rem; background: #fafafa; }
@@ -28,10 +31,19 @@
       white-space: pre;
       text-align: center;
     }
+    .font-sample { margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; }
+    .font-sample h3 { font-size: 1.25rem; margin-bottom: 0.25rem; }
+    .font-usage { color: #666; font-size: 0.875rem; margin-bottom: 1rem; }
+    .font-demo h2 { font-size: 2rem; line-height: 1.2; }
+    .font-demo p { font-size: 1rem; line-height: 1.6; }
+    .font-demo code { font-size: 0.875rem; background: #f5f5f5; padding: 1rem; border-radius: 4px; display: block; }
   </style>
 </head>
 <body>
-  <h1>🎨 Echoes Color Palettes</h1>
+  <h1>🎨 Echoes Brand System</h1>
+  <p class="subtitle">Color palettes and typography for the Echoes project</p>
+  
+  <h2>Colors</h2>
   <p class="subtitle">Hover over colors to see shade and hex values</p>
   
     <div class="palette">
@@ -53,6 +65,30 @@
       <h2>Bloom</h2>
       <p>Warm terracotta peach - blossoming, balance, discovery</p>
       <div class="colors"><div class="swatch" style="background:#fef8f3" data-shade="50" data-hex="#fef8f3"></div><div class="swatch" style="background:#fdeee6" data-shade="100" data-hex="#fdeee6"></div><div class="swatch" style="background:#fadacc" data-shade="200" data-hex="#fadacc"></div><div class="swatch" style="background:#f6bfa8" data-shade="300" data-hex="#f6bfa8"></div><div class="swatch" style="background:#f09b74" data-shade="400" data-hex="#f09b74"></div><div class="swatch" style="background:#e87a47" data-shade="500" data-hex="#e87a47"></div><div class="swatch" style="background:#d96129" data-shade="600" data-hex="#d96129"></div><div class="swatch" style="background:#b64d1f" data-shade="700" data-hex="#b64d1f"></div><div class="swatch" style="background:#92401e" data-shade="800" data-hex="#92401e"></div><div class="swatch" style="background:#75361d" data-shade="900" data-hex="#75361d"></div><div class="swatch" style="background:#3f1a0d" data-shade="950" data-hex="#3f1a0d"></div></div>
+    </div>
+  
+  <h2>Typography</h2>
+  
+    <div class="font-sample">
+      <h3>Literary serif for distinctive, readable headings</h3>
+      <p class="font-usage">Titles, chapter headings, narrative sections</p>
+      <div class="font-demo" style="font-family: 'Crimson Text', Georgia, Times New Roman, serif;">
+        <h2>The quick brown fox jumps over the lazy dog</h2>
+      </div>
+    </div>
+    <div class="font-sample">
+      <h3>Optimized for long-form reading across devices</h3>
+      <p class="font-usage">Paragraphs, articles, descriptions</p>
+      <div class="font-demo" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;">
+        <p>In the interconnected stories of Echoes, voices resonate across different timelines, creating a tapestry of human experience that transcends the boundaries of individual narratives.</p>
+      </div>
+    </div>
+    <div class="font-sample">
+      <h3>Code-friendly monospace for technical content</h3>
+      <p class="font-usage">Code blocks, CLI examples, data tables</p>
+      <div class="font-demo" style="font-family: 'JetBrains Mono', Consolas, Monaco, Courier New, monospace;">
+        <code>const echoes = { timeline: "anima", mood: "growth" };</code>
+      </div>
     </div>
 </body>
 </html>

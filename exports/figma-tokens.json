@@ -228,5 +228,22 @@
         "description": "Warm terracotta peach - blossoming, balance, discovery"
       }
     }
+  },
+  "typography": {
+    "heading": {
+      "value": "\"Crimson Text\", Georgia, Times New Roman, serif",
+      "type": "fontFamilies",
+      "description": "Literary serif for distinctive, readable headings"
+    },
+    "body": {
+      "value": "\"Inter\", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif",
+      "type": "fontFamilies",
+      "description": "Optimized for long-form reading across devices"
+    },
+    "mono": {
+      "value": "\"JetBrains Mono\", Consolas, Monaco, Courier New, monospace",
+      "type": "fontFamilies",
+      "description": "Code-friendly monospace for technical content"
+    }
   }
 }
