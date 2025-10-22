@@ -3,24 +3,69 @@
   "version": "0.0.0",
   "description": "Visual identity and brand assets for **Echoes** - a multi-POV digital storytelling platform.",
   "scripts": {
+    "lint": "concurrently npm:lint:* --prefixColors auto",
+    "lint:fix": "biome check --write",
+    "lint:lockfile": "lockfile-lint --path package-lock.json",
+    "lint:engines": "ls-engines",
+    "lint:publish": "publint --strict",
     "build": "tsx scripts/build.ts",
     "check": "tsx scripts/check-contrast.ts",
-    "dev": "npm run build && npm run check"
+    "dev": "npm run build && npm run check",
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": ">= 20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/echoes-io/brand.git"
   },
-  "keywords": [],
+  "keywords": [
+    "brand",
+    "design-system",
+    "color-palette",
+    "colors",
+    "tailwind",
+    "css-variables",
+    "figma-tokens",
+    "accessibility",
+    "wcag",
+    "echoes"
+  ],
   "author": "Zweer <n.olivieriachille@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/echoes-io/brand/issues"
   },
   "homepage": "https://github.com/echoes-io/brand#readme",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      "@semantic-release/git"
+    ]
+  },
   "devDependencies": {
+    "@biomejs/biome": "^2.2.7",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^24.9.1",
+    "concurrently": "^9.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.5",
+    "lockfile-lint": "^4.14.1",
+    "ls-engines": "^0.9.3",
+    "publint": "^0.3.15",
+    "rimraf": "^6.0.1",
+    "semantic-release": "^25.0.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }

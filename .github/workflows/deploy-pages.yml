@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm install
       
+      - name: Lint code
+        run: npm run lint
+      
       - name: Check color contrast (WCAG AA)
         run: npm run check
       
