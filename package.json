@@ -12,8 +12,18 @@
     "colors:export": "tsx scripts/colors-export.ts",
     "colors:check": "tsx scripts/colors-check.ts",
     "colors": "npm run colors:export && npm run colors:check",
-    "prepare": "husky"
+    "prepare": "[ \"$CI\" = \"true\" ] || [ \"$GITHUB_ACTIONS\" = \"true\" ] && echo 'Skipping husky' && exit 0 || husky",
+    "clean": "rimraf --glob ./{colors,scripts}/**/*.{d.ts,js} ./vitest*.{d.ts,js}",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "release": "semantic-release"
   },
+  "exports": {
+    "./colors": "./colors/index.js"
+  },
+  "files": [
+    "colors/index.{d.ts,js}"
+  ],
   "engines": {
     "node": ">= 20"
   },

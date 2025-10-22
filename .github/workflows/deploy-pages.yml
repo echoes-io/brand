@@ -1,11 +1,10 @@
-name: Check Colors & Deploy Pages
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: 
-      - main
-    paths:
-      - 'colors/index.ts'
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write
@@ -13,7 +12,63 @@ permissions:
   id-token: write
 
 jobs:
-  check-and-deploy:
+  check:
+    name: Quality Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: lts/*
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Lint code
+        run: npm run lint
+      
+      - name: Check color contrast (WCAG AA)
+        run: npm run colors:check
+      
+      - name: Build TypeScript
+        run: npm run build
+
+  npm-release:
+    name: NPM Release
+    needs: check
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js with NPM registry
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          registry-url: https://registry.npmjs.org
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build package
+        run: npm run build
+      
+      - name: Release to NPM
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  pages-deploy:
+    name: GitHub Pages Deploy
+    needs: check
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -25,15 +80,9 @@ jobs:
           node-version: lts/*
       
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       
-      - name: Lint code
-        run: npm run lint
-      
-      - name: Check color contrast (WCAG AA)
-        run: npm run colors:check
-      
-      - name: Build color exports
+      - name: Generate color exports
         run: npm run colors:export
       
       - name: Commit updated exports
@@ -41,7 +90,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add colors/exports/
-          git diff --staged --quiet || git commit -m "chore: update color exports [skip ci]"
+          git diff --staged --quiet || git commit -m "chore: update exports [skip ci]"
           git push
       
       - name: Upload Pages artifact

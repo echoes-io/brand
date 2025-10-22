@@ -1,7 +1,9 @@
 "package.json":
+  - "bash -c 'npm run build'"
   - "bash -c 'npm run lint:lockfile'"
   - "bash -c 'npm run lint:engines'"
   - "bash -c 'npm run lint:publish'"
+  - "bash -c 'npm run clean'"
 
 "colors/index.ts":
   - "bash -c 'npm run dev'"
