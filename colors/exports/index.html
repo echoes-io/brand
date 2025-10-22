@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoes Color Palettes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 3rem; background: #fafafa; }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .subtitle { color: #666; margin-bottom: 3rem; }
+    .palette { margin-bottom: 3rem; }
+    .palette h2 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .palette p { color: #666; margin-bottom: 1rem; font-size: 0.875rem; }
+    .colors { display: flex; gap: 0.25rem; }
+    .swatch { flex: 1; height: 100px; border-radius: 4px; position: relative; cursor: pointer; }
+    .swatch:hover::after {
+      content: attr(data-shade) "\A" attr(data-hex);
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      white-space: pre;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Echoes Color Palettes</h1>
+  <p class="subtitle">Hover over colors to see shade and hex values</p>
+  
+    <div class="palette">
+      <h2>Neutral</h2>
+      <p>GitHub-inspired neutral colors for UI elements</p>
+      <div class="colors"><div class="swatch" style="background:#fafafa" data-shade="50" data-hex="#fafafa"></div><div class="swatch" style="background:#f4f4f5" data-shade="100" data-hex="#f4f4f5"></div><div class="swatch" style="background:#e4e4e7" data-shade="200" data-hex="#e4e4e7"></div><div class="swatch" style="background:#d4d4d8" data-shade="300" data-hex="#d4d4d8"></div><div class="swatch" style="background:#a1a1aa" data-shade="400" data-hex="#a1a1aa"></div><div class="swatch" style="background:#71717a" data-shade="500" data-hex="#71717a"></div><div class="swatch" style="background:#52525b" data-shade="600" data-hex="#52525b"></div><div class="swatch" style="background:#3f3f46" data-shade="700" data-hex="#3f3f46"></div><div class="swatch" style="background:#27272a" data-shade="800" data-hex="#27272a"></div><div class="swatch" style="background:#18181b" data-shade="900" data-hex="#18181b"></div><div class="swatch" style="background:#09090b" data-shade="950" data-hex="#09090b"></div></div>
+    </div>
+    <div class="palette">
+      <h2>Anima</h2>
+      <p>Growth, support, tenderness</p>
+      <div class="colors"><div class="swatch" style="background:#f0fdf4" data-shade="50" data-hex="#f0fdf4"></div><div class="swatch" style="background:#dcfce7" data-shade="100" data-hex="#dcfce7"></div><div class="swatch" style="background:#bbf7d0" data-shade="200" data-hex="#bbf7d0"></div><div class="swatch" style="background:#86efac" data-shade="300" data-hex="#86efac"></div><div class="swatch" style="background:#4ade80" data-shade="400" data-hex="#4ade80"></div><div class="swatch" style="background:#22c55e" data-shade="500" data-hex="#22c55e"></div><div class="swatch" style="background:#16a34a" data-shade="600" data-hex="#16a34a"></div><div class="swatch" style="background:#15803d" data-shade="700" data-hex="#15803d"></div><div class="swatch" style="background:#166534" data-shade="800" data-hex="#166534"></div><div class="swatch" style="background:#14532d" data-shade="900" data-hex="#14532d"></div><div class="swatch" style="background:#052e16" data-shade="950" data-hex="#052e16"></div></div>
+    </div>
+    <div class="palette">
+      <h2>Eros</h2>
+      <p>Passion, intensity, rawness</p>
+      <div class="colors"><div class="swatch" style="background:#fef2f2" data-shade="50" data-hex="#fef2f2"></div><div class="swatch" style="background:#fee2e2" data-shade="100" data-hex="#fee2e2"></div><div class="swatch" style="background:#fecaca" data-shade="200" data-hex="#fecaca"></div><div class="swatch" style="background:#fca5a5" data-shade="300" data-hex="#fca5a5"></div><div class="swatch" style="background:#f87171" data-shade="400" data-hex="#f87171"></div><div class="swatch" style="background:#ef4444" data-shade="500" data-hex="#ef4444"></div><div class="swatch" style="background:#dc2626" data-shade="600" data-hex="#dc2626"></div><div class="swatch" style="background:#b91c1c" data-shade="700" data-hex="#b91c1c"></div><div class="swatch" style="background:#991b1b" data-shade="800" data-hex="#991b1b"></div><div class="swatch" style="background:#7f1d1d" data-shade="900" data-hex="#7f1d1d"></div><div class="swatch" style="background:#450a0a" data-shade="950" data-hex="#450a0a"></div></div>
+    </div>
+    <div class="palette">
+      <h2>Bloom</h2>
+      <p>Blossoming, balance, discovery</p>
+      <div class="colors"><div class="swatch" style="background:#fff7ed" data-shade="50" data-hex="#fff7ed"></div><div class="swatch" style="background:#ffedd5" data-shade="100" data-hex="#ffedd5"></div><div class="swatch" style="background:#fed7aa" data-shade="200" data-hex="#fed7aa"></div><div class="swatch" style="background:#fdba74" data-shade="300" data-hex="#fdba74"></div><div class="swatch" style="background:#fb923c" data-shade="400" data-hex="#fb923c"></div><div class="swatch" style="background:#f97316" data-shade="500" data-hex="#f97316"></div><div class="swatch" style="background:#ea580c" data-shade="600" data-hex="#ea580c"></div><div class="swatch" style="background:#c2410c" data-shade="700" data-hex="#c2410c"></div><div class="swatch" style="background:#9a3412" data-shade="800" data-hex="#9a3412"></div><div class="swatch" style="background:#7c2d12" data-shade="900" data-hex="#7c2d12"></div><div class="swatch" style="background:#431407" data-shade="950" data-hex="#431407"></div></div>
+    </div>
+</body>
+</html>

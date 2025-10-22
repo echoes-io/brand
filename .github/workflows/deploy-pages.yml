@@ -1,0 +1,50 @@
+name: Check Colors & Deploy Pages
+
+on:
+  push:
+    branches: 
+      - main
+    paths:
+      - 'colors/index.ts'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Check color contrast (WCAG AA)
+        run: npm run check
+      
+      - name: Build color exports
+        run: npm run build
+      
+      - name: Commit updated exports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add colors/exports/
+          git diff --staged --quiet || git commit -m "chore: update color exports [skip ci]"
+          git push
+      
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: colors/exports
+      
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

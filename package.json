@@ -1,0 +1,27 @@
+{
+  "name": "@echoes-io/brand",
+  "version": "0.0.0",
+  "description": "Visual identity and brand assets for **Echoes** - a multi-POV digital storytelling platform.",
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "check": "tsx scripts/check-contrast.ts",
+    "dev": "npm run build && npm run check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/echoes-io/brand.git"
+  },
+  "keywords": [],
+  "author": "Zweer <n.olivieriachille@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/echoes-io/brand/issues"
+  },
+  "homepage": "https://github.com/echoes-io/brand#readme",
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^24.9.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
