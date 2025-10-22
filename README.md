@@ -15,12 +15,13 @@ This repository contains the brand guidelines, color palettes, typography, and v
 ```
 brand/
 ├── colors/
-│   ├── index.ts         # Color definitions (single source of truth)
-│   └── exports/         # Generated exports (JSON, CSS, Tailwind, Figma, HTML)
+│   └── index.ts         # Color definitions (single source of truth)
+├── typography/
+│   └── index.ts         # Typography definitions (fonts, metadata)
+├── exports/             # Generated exports (CSS, Tailwind, Figma, HTML)
 ├── scripts/
-│   ├── build.ts         # Generate all color exports
-│   └── check-contrast.ts # Verify WCAG AA compliance
-├── typography/          # Font choices and examples (TODO)
+│   ├── export.ts        # Generate all exports
+│   └── colors-check.ts  # Verify WCAG AA compliance
 ├── logo/                # Logo and wordmark variants (TODO)
 └── guidelines.md        # Usage guidelines (TODO)
 ```
@@ -29,7 +30,7 @@ brand/
 
 ### Source
 
-All colors are defined in `colors/index.ts` as the single source of truth. All exports are generated from this file.
+All colors are defined in `colors/index.ts` and typography in `typography/index.ts` as single sources of truth. All exports are generated from these files.
 
 ### Palettes
 
@@ -60,10 +61,9 @@ All palettes use a Tailwind-inspired scale (50-950):
 
 ### Export Formats
 
-Generated in `colors/exports/`:
-- `palette.json` - Raw hex values
-- `variables.css` - CSS custom properties
-- `tailwind.config.js` - Tailwind CSS preset
+Generated in `exports/`:
+- `variables.css` - CSS custom properties (colors + fonts)
+- `tailwind.config.cjs` - Tailwind CSS preset
 - `figma-tokens.json` - Figma design tokens
 - `index.html` - Visual preview (deployed to GitHub Pages)
 
@@ -74,6 +74,11 @@ Generated in `colors/exports/`:
 .anima-card {
   background: var(--echoes-anima-50);
   color: var(--echoes-anima-900);
+  font-family: var(--echoes-font-body);
+}
+
+.chapter-title {
+  font-family: var(--echoes-font-heading);
 }
 ```
 
@@ -86,7 +91,7 @@ Generated in `colors/exports/`:
 
 **Direct from GitHub:**
 ```
-https://raw.githubusercontent.com/echoes-io/brand/main/colors/exports/palette.json
+https://raw.githubusercontent.com/echoes-io/brand/main/exports/variables.css
 ```
 
 ### Accessibility
@@ -103,15 +108,14 @@ Automated testing and deployment run on every push via GitHub Actions.
 
 ### Scripts
 
-- `npm run colors:export` - Generate all color exports
+- `npm run export` - Generate all exports (colors + typography)
 - `npm run colors:check` - Verify WCAG AA contrast ratios
 - `npm run lint` - Run all linters
-- `npm run colors` - Build and check
 
 ### Workflow
 
-1. Edit `colors/index.ts`
-2. Run `npm run colors` to build and verify
+1. Edit `colors/index.ts` or `typography/index.ts`
+2. Run `npm run export` to build and verify
 3. Commit and push to `main`
 4. GitHub Actions will:
    - Run quality checks (lint, accessibility, build)
@@ -123,9 +127,11 @@ Automated testing and deployment run on every push via GitHub Actions.
 
 Typography choices prioritize readability for long-form content across devices:
 
-- **Headings**: Distinctive yet readable
-- **Body**: Optimized for extended reading on mobile and desktop
-- **Monospace** (optional): For CLI and code examples
+- **Headings**: Crimson Text - Literary serif for distinctive, readable headings
+- **Body**: Inter - Optimized for extended reading on mobile and desktop  
+- **Monospace**: JetBrains Mono - For CLI and code examples
+
+All fonts are available via Google Fonts and exported as CSS variables, Tailwind classes, and Figma tokens.
 
 ## Logo & Wordmark
 
@@ -145,16 +151,17 @@ npm install @echoes-io/brand
 ```
 
 ```typescript
-import { colors, metadata } from '@echoes-io/brand/colors';
+import { colors, typography, metadata } from '@echoes-io/brand/colors';
 
 // Use colors in your app
 const animaColor = colors.anima[500]; // #2fc470
+const headingFont = typography.heading.name; // "Crimson Text"
 ```
 
 ### Direct from GitHub
 
 ```
-https://raw.githubusercontent.com/echoes-io/brand/main/colors/exports/palette.json
+https://raw.githubusercontent.com/echoes-io/brand/main/exports/variables.css
 ```
 
 Brand assets are designed to be used across:
@@ -165,16 +172,20 @@ Brand assets are designed to be used across:
 
 ## Development Status
 
-🚧 **In Progress**
+✅ **Phase 1: Complete**
 
 - [x] Color palette generation (Tailwind scale 50-950)
-- [x] Export formats (CSS vars, Tailwind config, Figma tokens, HTML preview)
+- [x] Typography system (Crimson Text, Inter, JetBrains Mono)
+- [x] Unified export system (CSS vars, Tailwind config, Figma tokens, HTML preview)
 - [x] Accessibility testing (WCAG AA compliance)
 - [x] Automated CI/CD (lint, check, build, deploy)
 - [x] NPM package publishing (semantic versioning)
-- [ ] Typography selection
-- [ ] Logo design
-- [ ] Usage guidelines
+
+🚧 **Phase 2: In Progress**
+
+- [ ] Logo design and wordmark variants
+- [ ] Usage guidelines and best practices
+- [ ] Examples and mockups
 
 ## License
 
