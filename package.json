@@ -1,5 +1,6 @@
 {
   "name": "@echoes-io/brand",
+  "type": "module",
   "version": "0.0.0",
   "description": "Visual identity and brand assets for **Echoes** - a multi-POV digital storytelling platform.",
   "scripts": {

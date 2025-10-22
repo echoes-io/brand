@@ -14,14 +14,22 @@ This repository contains the brand guidelines, color palettes, typography, and v
 
 ```
 brand/
-├── colors/          # Color palettes (JSON, CSS, tokens)
-├── typography/      # Font choices and examples
-├── logo/            # Logo and wordmark variants (SVG)
-├── guidelines.md    # Usage guidelines
-└── examples/        # Mockups and previews
+├── colors/
+│   ├── index.ts         # Color definitions (single source of truth)
+│   └── exports/         # Generated exports (JSON, CSS, Tailwind, Figma, HTML)
+├── scripts/
+│   ├── build.ts         # Generate all color exports
+│   └── check-contrast.ts # Verify WCAG AA compliance
+├── typography/          # Font choices and examples (TODO)
+├── logo/                # Logo and wordmark variants (TODO)
+└── guidelines.md        # Usage guidelines (TODO)
 ```
 
 ## Color System
+
+### Source
+
+All colors are defined in `colors/index.ts` as the single source of truth. All exports are generated from this file.
 
 ### Palettes
 
@@ -52,11 +60,12 @@ All palettes use a Tailwind-inspired scale (50-950):
 
 ### Export Formats
 
-Available in `colors/`:
+Generated in `colors/exports/`:
 - `palette.json` - Raw hex values
 - `variables.css` - CSS custom properties
 - `tailwind.config.js` - Tailwind CSS preset
 - `figma-tokens.json` - Figma design tokens
+- `index.html` - Visual preview (deployed to GitHub Pages)
 
 ### Usage Examples
 
@@ -75,13 +84,41 @@ Available in `colors/`:
 </div>
 ```
 
+**Direct from GitHub:**
+```
+https://raw.githubusercontent.com/echoes-io/brand/main/colors/exports/palette.json
+```
+
 ### Accessibility
 
 All combinations meet WCAG AA standards (4.5:1 minimum contrast for normal text).
 
-Test contrast ratios: `node colors/check-contrast.js`
+**Test locally:** `npm run check`
 
-Automated testing runs on every push via GitHub Actions.
+**Preview:** https://echoes-io.github.io/brand/
+
+Automated testing and deployment run on every push via GitHub Actions.
+
+## Development
+
+### Scripts
+
+- `npm run build` - Generate all color exports
+- `npm run check` - Verify WCAG AA contrast ratios
+- `npm run lint` - Run all linters
+- `npm run dev` - Build and check
+
+### Workflow
+
+1. Edit `colors/index.ts`
+2. Run `npm run dev` to build and verify
+3. Commit and push to `main`
+4. GitHub Actions will:
+   - Lint code
+   - Check accessibility
+   - Build exports
+   - Commit updated exports
+   - Deploy preview to GitHub Pages
 
 ## Typography
 
@@ -113,8 +150,9 @@ Brand assets are designed to be used across:
 🚧 **In Progress**
 
 - [x] Color palette generation (Tailwind scale 50-950)
-- [x] Export formats (CSS vars, Tailwind config, Figma tokens)
+- [x] Export formats (CSS vars, Tailwind config, Figma tokens, HTML preview)
 - [x] Accessibility testing (WCAG AA compliance)
+- [x] Automated CI/CD (lint, check, build, deploy)
 - [ ] Typography selection
 - [ ] Logo design
 - [ ] Usage guidelines

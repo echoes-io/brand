@@ -1,5 +1,6 @@
-import { writeFileSync, mkdirSync } from 'fs';
-import { colors, metadata } from '../colors/index';
+import { mkdirSync, writeFileSync } from 'node:fs';
+
+import { colors, metadata } from '../colors/index.js';
 
 const OUT_DIR = './colors/exports';
 
@@ -11,7 +12,7 @@ writeFileSync(`${OUT_DIR}/palette.json`, JSON.stringify(colors, null, 2));
 // 2. CSS Variables
 const cssVars = Object.entries(colors)
   .flatMap(([palette, shades]) =>
-    Object.entries(shades).map(([shade, hex]) => `  --echoes-${palette}-${shade}: ${hex};`)
+    Object.entries(shades).map(([shade, hex]) => `  --echoes-${palette}-${shade}: ${hex};`),
   )
   .join('\n');
 
@@ -19,8 +20,8 @@ writeFileSync(`${OUT_DIR}/variables.css`, `:root {\n${cssVars}\n}\n`);
 
 // 3. Tailwind Config
 writeFileSync(
-  `${OUT_DIR}/tailwind.config.js`,
-  `module.exports = {\n  theme: {\n    extend: {\n      colors: ${JSON.stringify(colors, null, 8)},\n    },\n  },\n};\n`
+  `${OUT_DIR}/tailwind.config.cjs`,
+  `module.exports = {\n  theme: {\n    extend: {\n      colors: ${JSON.stringify(colors, null, 8)},\n    },\n  },\n};\n`,
 );
 
 // 4. Figma Tokens
@@ -31,10 +32,14 @@ const figmaTokens = {
       Object.fromEntries(
         Object.entries(shades).map(([shade, hex]) => [
           shade,
-          { value: hex, type: 'color', description: metadata[palette as keyof typeof metadata].description },
-        ])
+          {
+            value: hex,
+            type: 'color',
+            description: metadata[palette as keyof typeof metadata].description,
+          },
+        ]),
       ),
-    ])
+    ]),
   ),
 };
 
@@ -44,7 +49,10 @@ writeFileSync(`${OUT_DIR}/figma-tokens.json`, JSON.stringify(figmaTokens, null, 
 const swatches = Object.entries(colors)
   .map(([palette, shades]) => {
     const swatchesHtml = Object.entries(shades)
-      .map(([shade, hex]) => `<div class="swatch" style="background:${hex}" data-shade="${shade}" data-hex="${hex}"></div>`)
+      .map(
+        ([shade, hex]) =>
+          `<div class="swatch" style="background:${hex}" data-shade="${shade}" data-hex="${hex}"></div>`,
+      )
       .join('');
     return `
     <div class="palette">
