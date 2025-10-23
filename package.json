@@ -19,7 +19,7 @@
   },
   "exports": {
     "./colors": "./colors/index.js",
-    "./typography": "./colors/index.js"
+    "./typography": "./typography/index.js"
   },
   "files": [
     "colors/index.{d.ts,js}",
