@@ -1,7 +1,7 @@
 {
   "name": "@echoes-io/brand",
   "type": "module",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Visual identity and brand assets for **Echoes** - a multi-POV digital storytelling platform.",
   "scripts": {
     "lint": "concurrently npm:lint:* --prefixColors auto",
