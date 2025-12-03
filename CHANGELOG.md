@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/echoes-io/brand/compare/v1.0.0...v1.1.0) (2025-12-03)
+
+
+### Features
+
+* **kiro:** migrate from Amazon Q to Kiro agent configuration ([a97937e](https://github.com/echoes-io/brand/commit/a97937e00c3c614547b039db61beed8a4dbdf525))
+
 # 1.0.0 (2025-10-29)
 
 
