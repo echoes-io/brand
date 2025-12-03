@@ -1,0 +1,25 @@
+{
+  "name": "default",
+  "description": "Agent for echoes-io/brand - Brand identity and visual assets for the Echoes project",
+  "prompt": "file://../prompts/default-prompt.md",
+  "tools": ["read", "write", "shell", "web_search", "web_fetch", "introspect", "thinking"],
+  "toolAliases": {},
+  "allowedTools": ["read", "shell", "web_search", "web_fetch", "introspect", "thinking"],
+  "toolsSettings": {
+    "write": {
+      "allowedPaths": [
+        "colors/**",
+        "typography/**",
+        "exports/**",
+        "scripts/**",
+        "*.md",
+        "*.json",
+        "*.ts"
+      ]
+    },
+    "shell": {
+      "autoAllowReadonly": true
+    }
+  },
+  "resources": ["file://README.md", "file://guidelines.md"]
+}
