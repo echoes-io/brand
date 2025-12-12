@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/echoes-io/brand/compare/v1.1.0...v1.2.0) (2025-12-12)
+
+
+### Features
+
+* rename agent from 'default' to 'dev' and add code tool ([fa3e596](https://github.com/echoes-io/brand/commit/fa3e59676cb776360c4b7c7e938906b66d6d6a1d))
+
 # [1.1.0](https://github.com/echoes-io/brand/compare/v1.0.0...v1.1.0) (2025-12-03)
 
 
