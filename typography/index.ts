@@ -17,9 +17,9 @@ export type TypographyScale = {
 
 export const typography: TypographyScale = {
   heading: {
-    name: 'Crimson Text',
+    name: 'Crimson Pro',
     fallback: ['Georgia', 'Times New Roman', 'serif'],
-    weights: [400, 600, 700],
+    weights: [200, 300, 400, 500, 600, 700, 800, 900],
     variable: '--font-heading',
   },
   body: {
@@ -38,7 +38,7 @@ export const typography: TypographyScale = {
 
 export const metadata = {
   heading: {
-    description: 'Literary serif for distinctive, readable headings',
+    description: 'Literary variable serif for distinctive, readable headings',
     usage: 'Titles, chapter headings, narrative sections',
   },
   body: {

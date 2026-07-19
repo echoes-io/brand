@@ -31,12 +31,18 @@ function getContrast(hex1: string, hex2: string) {
 const combinations = [
   { name: 'Neutral Light', fg: colors.neutral['900'], bg: colors.neutral['50'] },
   { name: 'Neutral Dark', fg: colors.neutral['50'], bg: colors.neutral['900'] },
+  { name: 'Primary Light', fg: colors.primary['900'], bg: colors.primary['50'] },
+  { name: 'Primary Dark', fg: colors.primary['50'], bg: colors.primary['900'] },
   { name: 'Anima Light', fg: colors.anima['900'], bg: colors.anima['50'] },
   { name: 'Anima Dark', fg: colors.anima['50'], bg: colors.anima['900'] },
   { name: 'Eros Light', fg: colors.eros['900'], bg: colors.eros['50'] },
   { name: 'Eros Dark', fg: colors.eros['50'], bg: colors.eros['900'] },
   { name: 'Bloom Light', fg: colors.bloom['900'], bg: colors.bloom['50'] },
   { name: 'Bloom Dark', fg: colors.bloom['50'], bg: colors.bloom['900'] },
+  { name: 'Glow Light', fg: colors.glow['900'], bg: colors.glow['50'] },
+  { name: 'Glow Dark', fg: colors.glow['50'], bg: colors.glow['900'] },
+  { name: 'Pulse Light', fg: colors.pulse['900'], bg: colors.pulse['50'] },
+  { name: 'Pulse Dark', fg: colors.pulse['50'], bg: colors.pulse['900'] },
 ];
 
 console.log('🎨 Echoes Color Contrast Report\n');

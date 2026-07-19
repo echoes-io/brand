@@ -18,9 +18,12 @@ export type ColorScale = {
 
 export type Palette = {
   neutral: ColorScale;
+  primary: ColorScale;
   anima: ColorScale;
   eros: ColorScale;
   bloom: ColorScale;
+  glow: ColorScale;
+  pulse: ColorScale;
 };
 
 export const colors: Palette = {
@@ -36,6 +39,19 @@ export const colors: Palette = {
     800: '#27272a',
     900: '#18181b',
     950: '#09090b',
+  },
+  primary: {
+    50: '#eff6ff',
+    100: '#dbeafe',
+    200: '#bfdbfe',
+    300: '#93c5fd',
+    400: '#60a5fa',
+    500: '#3b82f6',
+    600: '#2563eb',
+    700: '#1d4ed8',
+    800: '#1e40af',
+    900: '#1e3a8a',
+    950: '#172554',
   },
   anima: {
     50: '#f0fdf6',
@@ -76,12 +92,42 @@ export const colors: Palette = {
     900: '#75361d',
     950: '#3f1a0d',
   },
+  glow: {
+    50: '#fefbf3',
+    100: '#fdf4e1',
+    200: '#fbe7c0',
+    300: '#f7d48e',
+    400: '#f0ba54',
+    500: '#dba033',
+    600: '#c8862a',
+    700: '#a06b1f',
+    800: '#7d541b',
+    900: '#664518',
+    950: '#3a250c',
+  },
+  pulse: {
+    50: '#f9f7fb',
+    100: '#f1ecf6',
+    200: '#e4daec',
+    300: '#d2c5de',
+    400: '#b8a4ca',
+    500: '#7d6b91',
+    600: '#655577',
+    700: '#514562',
+    800: '#40374f',
+    900: '#332c40',
+    950: '#1e1926',
+  },
 };
 
 export const metadata = {
   neutral: {
     name: 'Neutral',
     description: 'GitHub-inspired neutral colors for UI elements',
+  },
+  primary: {
+    name: 'Primary',
+    description: 'Electric blue for primary actions and interactive elements',
   },
   anima: {
     name: 'Anima',
@@ -94,5 +140,13 @@ export const metadata = {
   bloom: {
     name: 'Bloom',
     description: 'Warm terracotta peach - blossoming, balance, discovery',
+  },
+  glow: {
+    name: 'Glow',
+    description: 'Warm amber honey - intimacy, warmth, everyday light',
+  },
+  pulse: {
+    name: 'Pulse',
+    description: 'Dusty violet slate - introspection, raw emotion, fragments',
   },
 };
