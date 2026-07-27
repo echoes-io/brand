@@ -70,7 +70,7 @@ const headingFont = typography.heading.name; // "Crimson Pro"
 ### CSS Variables
 
 ```css
-@import url('@echoes-io/brand/exports/variables.css');
+@import '@echoes-io/brand/variables.css';
 
 .card {
   background: var(--echoes-anima-50);
@@ -85,7 +85,7 @@ Import the preset in your main CSS file:
 
 ```css
 @import "tailwindcss";
-@import url('@echoes-io/brand/exports/tailwind-preset.css');
+@import '@echoes-io/brand/tailwind';
 ```
 
 Then use the utilities directly:

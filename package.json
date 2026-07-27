@@ -20,11 +20,16 @@
   },
   "exports": {
     "./colors": "./colors/index.js",
-    "./typography": "./typography/index.js"
+    "./typography": "./typography/index.js",
+    "./tailwind": "./exports/tailwind-preset.css",
+    "./variables.css": "./exports/variables.css",
+    "./figma-tokens.json": "./exports/figma-tokens.json"
   },
   "files": [
     "colors/index.{d.ts,js}",
-    "typography/index.{d.ts,js}"
+    "typography/index.{d.ts,js}",
+    "exports/*.css",
+    "exports/*.json"
   ],
   "engines": {
     "node": ">= 20"
