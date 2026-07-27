@@ -8,7 +8,7 @@
     "lint:format": "biome check --write",
     "lint:lockfile": "lockfile-lint --path package-lock.json",
     "lint:engines": "ls-engines",
-    "lint:publish": "publint --strict",
+    "lint:publish": "tsc && publint --strict",
     "export": "tsx scripts/export.ts",
     "colors:check": "tsx scripts/colors-check.ts",
     "images:optimize": "tsx scripts/optimize-images.ts",
