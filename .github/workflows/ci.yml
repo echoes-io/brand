@@ -1,7 +1,10 @@
-name: CI/CD Pipeline
+name: CI
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
 
@@ -17,6 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -30,50 +34,17 @@ jobs:
       - name: Check color contrast (WCAG AA)
         run: npm run colors:check
 
-  npm-release:
-    name: NPM Release
-    needs: check
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          cache: npm
-          node-version: lts/*
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build the files
-        run: npm run build
-
-      - name: Run linting
-        run: npm run lint
-
-      - name: Release
-        run: npm run release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
   pages-deploy:
     name: GitHub Pages Deploy
     needs: check
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
-      contents: write
       pages: write
       id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -82,6 +53,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -89,18 +61,11 @@ jobs:
       - name: Generate exports
         run: npm run export
 
-      - name: Commit updated exports
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add exports/
-          git diff --staged --quiet || git commit -m "chore: update exports [skip ci]"
-          git push
-
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: exports
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

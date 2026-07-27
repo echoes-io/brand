@@ -1,0 +1,31 @@
+pre-commit:
+  parallel: false
+  commands:
+    format:
+      glob: "*.{ts,tsx,cjs,json,yaml,graphql,md,css,scss,html}"
+      run: npx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+    export:
+      glob: "colors/index.ts"
+      run: npm run export
+      stage_fixed: true
+    build:
+      glob: "package.json"
+      run: npm run build
+    lint-lockfile:
+      glob: "package.json"
+      run: npm run lint:lockfile
+    lint-engines:
+      glob: "package.json"
+      run: npm run lint:engines
+    lint-publish:
+      glob: "package.json"
+      run: npm run lint:publish
+    clean:
+      glob: "package.json"
+      run: npm run clean
+
+pre-push:
+  commands:
+    lfs:
+      run: git lfs pre-push origin {push_stdout}
