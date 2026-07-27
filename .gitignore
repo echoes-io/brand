@@ -2,6 +2,9 @@
 *.js
 *.d.ts
 
+# Generated exports (regenerated in CI)
+exports/
+
 # Logs
 logs
 *.log
