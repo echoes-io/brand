@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/echoes-io/brand/compare/v2.0.0...v2.0.1) (2026-07-27)
+
+
+### Bug Fixes
+
+* stop tracking exports/ and fix release workflow ([ce90190](https://github.com/echoes-io/brand/commit/ce90190a399d2bb88cb685fdf2fa983729fe1f74))
+
 ## [2.0.0](https://github.com/echoes-io/brand/compare/v1.2.0...v2.0.0) (2026-07-27)
 
 
