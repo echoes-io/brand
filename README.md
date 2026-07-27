@@ -14,7 +14,7 @@ brand/
 │   └── index.ts           # Typography definitions (single source of truth)
 ├── exports/               # Generated exports (never edit manually)
 │   ├── variables.css      # CSS custom properties (colors + fonts)
-│   ├── tailwind.config.cjs# Tailwind CSS preset
+│   ├── tailwind-preset.css# Tailwind CSS v4 theme
 │   ├── figma-tokens.json  # Figma design tokens
 │   └── index.html         # Visual preview (deployed to GitHub Pages)
 ├── scripts/
@@ -70,15 +70,30 @@ const headingFont = typography.heading.name; // "Crimson Pro"
 ### CSS Variables
 
 ```css
+@import url('@echoes-io/brand/exports/variables.css');
+
 .card {
   background: var(--echoes-anima-50);
   color: var(--echoes-anima-900);
   font-family: var(--echoes-font-body);
 }
+```
 
-h1 {
-  font-family: var(--echoes-font-heading);
-}
+### Tailwind CSS v4
+
+Import the preset in your main CSS file:
+
+```css
+@import "tailwindcss";
+@import url('@echoes-io/brand/exports/tailwind-preset.css');
+```
+
+Then use the utilities directly:
+
+```html
+<div class="bg-anima-50 text-anima-900 font-body">
+  <h1 class="font-heading">Title</h1>
+</div>
 ```
 
 ### Direct from GitHub

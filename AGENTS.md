@@ -14,7 +14,7 @@ brand/
 │   └── index.ts           # Typography definitions (fonts, weights, metadata)
 ├── exports/               # ⚠️ GENERATED — never edit manually
 │   ├── variables.css      # CSS custom properties
-│   ├── tailwind.config.cjs# Tailwind CSS preset
+│   ├── tailwind-preset.css# Tailwind CSS v4 theme
 │   ├── figma-tokens.json  # Figma design tokens
 │   └── index.html         # Visual preview (deployed to GitHub Pages)
 ├── scripts/

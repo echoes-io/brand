@@ -20,10 +20,20 @@ const fontVars = Object.entries(typography)
 
 writeFileSync(`${OUT_DIR}/variables.css`, `:root {\n${cssVars}\n${fontVars}\n}\n`);
 
-// 2. Tailwind Config
+// 2. Tailwind CSS v4 Theme
+const tailwindColors = Object.entries(colors)
+  .flatMap(([palette, shades]) =>
+    Object.entries(shades).map(([shade, hex]) => `  --color-${palette}-${shade}: ${hex};`),
+  )
+  .join('\n');
+
+const tailwindFonts = Object.entries(typography)
+  .map(([type, font]) => `  --font-${type}: "${font.name}", ${font.fallback.join(', ')};`)
+  .join('\n');
+
 writeFileSync(
-  `${OUT_DIR}/tailwind.config.cjs`,
-  `module.exports = {\n  theme: {\n    extend: {\n      colors: ${JSON.stringify(colors, null, 8)},\n    },\n  },\n};\n`,
+  `${OUT_DIR}/tailwind-preset.css`,
+  `@theme {\n${tailwindColors}\n\n${tailwindFonts}\n}\n`,
 );
 
 // 3. Figma Tokens
