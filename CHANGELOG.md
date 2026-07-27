@@ -1,18 +1,43 @@
-# [1.2.0](https://github.com/echoes-io/brand/compare/v1.1.0...v1.2.0) (2025-12-12)
+# Changelog
+
+## [2.0.0](https://github.com/echoes-io/brand/compare/v1.2.0...v2.0.0) (2026-07-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* replaced tailwind.config.cjs with tailwind-preset.css
+* removed .kiro/ agent configuration
+
+### Features
+
+* add primary, glow, pulse palettes + Crimson Pro ([aad4964](https://github.com/echoes-io/brand/commit/aad4964d751e3c89894959b71fead614ee06be72))
+* add timeline and series brand assets ([8cd3a8e](https://github.com/echoes-io/brand/commit/8cd3a8ec5687032414edae31127b1c8b6fb6aa67))
+* migrate Tailwind export from v3 config to v4 CSS theme ([13f3eae](https://github.com/echoes-io/brand/commit/13f3eae8885aa2bb2921bad40a87926e61cf8f5e))
+* migrate tooling and update dependencies ([fdf33f2](https://github.com/echoes-io/brand/commit/fdf33f2efa206584e0843093d0debd7cd7706353))
+* refresh brand repo structure and documentation ([5773933](https://github.com/echoes-io/brand/commit/5773933ae4d60c26e9bc8886c21cae2d888a42e6))
+
+
+### Bug Fixes
+
+* ensure lint:publish works without prior build ([173d621](https://github.com/echoes-io/brand/commit/173d62151b502d6da87d6cdd1b7899ebbd519e5f))
+* exclude exports/ from biome and regenerate ([deffecf](https://github.com/echoes-io/brand/commit/deffecfd202b099a106ab1a820500c78b9cd0458))
+* publish CSS exports in NPM package ([0216268](https://github.com/echoes-io/brand/commit/021626800fe070e4d5efab6f8d1026a52ebd7257))
+
+## [1.2.0](https://github.com/echoes-io/brand/compare/v1.1.0...v1.2.0) (2025-12-12)
 
 
 ### Features
 
 * rename agent from 'default' to 'dev' and add code tool ([fa3e596](https://github.com/echoes-io/brand/commit/fa3e59676cb776360c4b7c7e938906b66d6d6a1d))
 
-# [1.1.0](https://github.com/echoes-io/brand/compare/v1.0.0...v1.1.0) (2025-12-03)
+## [1.1.0](https://github.com/echoes-io/brand/compare/v1.0.0...v1.1.0) (2025-12-03)
 
 
 ### Features
 
 * **kiro:** migrate from Amazon Q to Kiro agent configuration ([a97937e](https://github.com/echoes-io/brand/commit/a97937e00c3c614547b039db61beed8a4dbdf525))
 
-# 1.0.0 (2025-10-29)
+## 1.0.0 (2025-10-29)
 
 
 ### Bug Fixes
